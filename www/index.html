@@ -25,17 +25,109 @@
         <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
         <link rel="stylesheet" type="text/css" href="css/index.css" />
+        <link rel="stylesheet" type="text/css" href="Content/jquery.mobile-1.4.5.min.css" />
+        <link rel="stylesheet" type="text/css" href="Content/jquery.mobile.icon-1.4.5.min.css" />
         <title>Hello World</title>
     </head>
     <body>
-        <div class="app">
-            <h1>Apache Cordova</h1>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
+        <!-- MAIN PAGE -->
+    	<div data-role="page" id="index">
+	    	<div data-role="header">
+	        	<h4>Header</h4>
+	        </div>
+	        <div data-role="content">
+                
+	        	<input id="height" type="number" name="height" placeholder="Input your height (cm)" data-clear-btn="true">
+	        	<input id="weight" type="number" name="weight" placeholder="Input your weight (kg)" data-clear-btn="true">
+	        	<button id="btnCalc">Calc BMI</button>
+	        	<button id="btnClear">Clear</button>
+                <div ng-app="" ng-controller="calculateController">
+                </div>
+
+                <div class="ui-grid-a">
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-a" style="color: green">BMI less than 18.50</div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-a" style="color: green">Underweight</div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-a">BMI 18.50 - 24.99</div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-a">Healthy weight</div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-a" style="color: orange">BMI 25.00 - 29.99</div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-a" style="color: orange">Overweight</div>
+                    </div>
+                    <div class="ui-block-a">
+                        <div class="ui-bar ui-bar-a" style="color: red">BMI 30 or more</div>
+                    </div>
+                    <div class="ui-block-b">
+                        <div class="ui-bar ui-bar-a" style="color: red">Obese</div>
+                    </div>
+                </div><!-- grid-a -->
+                <!--
+                <table data-role="table" data-mode="reflow">
+                    <thead>
+                        <tr>
+                            <th>BMI less than 18.50</th>
+                            <th>BMI 18.50 - 24.99</th>
+                            <th>BMI 25.00 - 29.99</th>
+                            <th>BMI 30 or more</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Underweight</td>
+                            <td>Healthy weight</td>
+                            <td>Overweight</td>
+                            <td>Obese</td>
+                        </tr>
+                    </tbody>
+                </table>
+                -->
+	        </div>
+	        <div data-role="footer" data-position="fixed">
+	        	<div data-role="navbar">
+                    <ul>
+                        <li><a href="#index">BMI Calc</a></li>
+                        <li><a href="chart.html">BMI Chart</a></li>
+                        <li><a href="#aboutus">About Us</a></li>
+                    </ul>      
+                </div>
+	        </div>
+		</div> <!-- END MAIN PAGE -->
+        <!-- ABOUT US PAGE -->
+        <div data-role="page" id="aboutus">
+            <div data-role="header">
+                <h4>About Us</h4>
             </div>
-        </div>
+            <div data-role="content">
+                <p>About Us Page</p>
+            </div>
+            <div data-role="footer" data-position="fixed">
+                <div data-role="navbar">
+                    <ul>
+                        <li><a href="#index">BMI Calc</a></li>
+                        <li><a href="chart.html">BMI Chart</a></li>
+                        <li><a href="#aboutus">About Us</a></li>
+                    </ul>      
+                </div>
+            </div>
+        </div> <!-- END ABOUT US PAGE -->
+        
+        <!--Jquery mobile-->
+        <script type="text/javascript" src="Scripts/jquery-1.11.1.min.js"></script>
+        <script type="text/javascript" src="Scripts/jquery.mobile-1.4.5.min.js"></script>
+        <!--plugin-->
         <script type="text/javascript" src="cordova.js"></script>
         <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="Scripts/angular.min.js"></script>
+        <!--models-->
+        <!--page behavior-->
     </body>
 </html>
